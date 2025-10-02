@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroShield Tech - Clean Warehouse Air</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; background: #f4f4f4; }
+        header { background: #007bff; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        .hero { background: linear-gradient(to right, #007bff, #0056b3); color: white; text-align: center; padding: 60px 20px; }
+        .hero h1 { font-size: 2.5em; margin: 0; }
+        .hero p { font-size: 1.2em; margin: 10px 0; }
+        .cta { background: #28a745; color: white; padding: 15px 30px; border: none; font-size: 1.1em; cursor: pointer; border-radius: 5px; margin: 10px; }
+        .features { padding: 40px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .feature { text-align: center; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .feature img { width: 80px; height: 80px; background: #ddd; border-radius: 50%; margin-bottom: 10px; } /* Placeholder for icons */
+        .benefits { padding: 40px 20px; background: #e9ecef; }
+        .benefits h2 { text-align: center; }
+        .video { text-align: center; margin: 20px 0; }
+        .contact { padding: 40px 20px; text-align: center; background: white; }
+        .contact form { max-width: 400px; margin: 0 auto; }
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; }
+        footer { background: #007bff; color: white; text-align: center; padding: 10px; }
+        #modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; }
+        .modal-content { background: white; margin: 15% auto; padding: 20px; width: 70%; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>AeroShield Tech</h2>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#benefits">Benefits</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Clean, Breathable Air for Your Warehouse</h1>
+        <p>AeroShield Tech's AeroGuard Pro slashes emissions by 30% with AI-powered monitoring—healthier teams, zero fines, ROI in months.</p>
+        <button class="cta" onclick="bookDemo()">Book Free Demo</button>
+        <button class="cta" onclick="contactNow()">Get Quote</button>
+    </section>
+
+    <section id="features" class="features">
+        <h2 style="grid-column: 1 / -1; text-align: center;">Key Features</h2>
+        <div class="feature">
+            <div style="background: #007bff;"></div> <!-- Icon placeholder -->
+            <h3>Real-Time Monitoring</h3>
+            <p>IoT sensors track PM2.5, NO2, CO2 instantly.</p>
+        </div>
+        <div class="feature">
+            <div style="background: #28a745;"></div>
+            <h3>AI Predictions</h3>
+            <p>Forecast spikes and auto-activate purification.</p>
+        </div>
+        <div class="feature">
+            <div style="background: #ffc107;"></div>
+            <h3>Easy Dashboard</h3>
+            <p>Mobile alerts and compliance reports on demand.</p>
+        </div>
+    </section>
+
+    <section id="benefits" class="benefits">
+        <h2>Proven Benefits</h2>
+        <div class="video">
+            <!-- Embed video placeholder -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe> <!-- Demo video -->
+            <p>Watch how we cut emissions 30% in real warehouses.</p>
+        </div>
+        <!-- Simple infographic with CSS -->
+        <div style="display: flex; justify-content: space-around; margin: 20px 0;">
+            <div style="text-align: center;">
+                <h3>30% Reduction</h3>
+                <p>Pollutants slashed</p>
+            </div>
+            <div style="text-align: center;">
+                <h3>PHP 10K/Mo</h3>
+                <p>Energy savings</p>
+            </div>
+            <div style="text-align: center;">
+                <h3>Zero Fines</h3>
+                <p>Full compliance</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@aeroshiieldtech.com | Phone: +1-800-AIR-CLEAN</p>
+        <form onsubmit="submitForm(event)">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit" class="cta">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 AeroShield Tech. All rights reserved.</p>
+    </footer>
+
+    <div id="modal">
+        <div class="modal-content">
+            <h3>Thanks! We'll be in touch.</h3>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function bookDemo() {
+            alert('Demo booked! Redirecting to calendar...');
+            // Simulate booking
+        }
+        function contactNow() {
+            document.getElementById('modal').style.display = 'block';
+        }
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+        function submitForm(e) {
+            e.preventDefault();
+            alert('Message sent! Thank you.');
+            e.target.reset();
+        }
+        // Smooth scroll for nav
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
